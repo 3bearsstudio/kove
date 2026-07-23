@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — KOVE</title>
+  <meta name="description" content="How the KOVE app collects, uses, and protects your information. Published by 3 Bears Studio LLC." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='84'>%F0%9F%8C%8A</text></svg>" />
+  <style>
+    :root {
+      --midnight: #0b1426;
+      --wave: #2b7bb0;
+      --wave-deep: #123f60;
+      --foam: #8fd8ea;
+      --ink: #1b2330;
+      --muted: #57627a;
+      --paper: #ffffff;
+      --wash: #f3f8fc;
+      --wash-2: #eaf2f9;
+      --line: #dce6f0;
+      --coral: #d65a37;
+      --maxw: 820px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --midnight: #060c17;
+        --ink: #e7edf5;
+        --muted: #9aa7bd;
+        --paper: #0f1826;
+        --wash: #141f30;
+        --wash-2: #18263a;
+        --line: #26344a;
+        --wave: #57a6d6;
+        --foam: #8fd8ea;
+      }
+      body { background: #0a1220; }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--wash);
+      line-height: 1.68;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .topbar {
+      background: linear-gradient(180deg, var(--midnight), var(--wave-deep));
+      color: #eaf6fb;
+    }
+    .topbar .inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .wordmark {
+      font-weight: 700;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      font-size: 20px;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .wordmark .wave-dot { color: var(--foam); }
+    .topbar .tag {
+      font-size: 12.5px;
+      letter-spacing: 0.05em;
+      color: rgba(234, 246, 251, 0.72);
+    }
+    .sheet {
+      max-width: var(--maxw);
+      margin: 28px auto 64px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 52px clamp(22px, 5vw, 64px) 60px;
+      box-shadow: 0 10px 40px -24px rgba(11, 20, 38, 0.35);
+    }
+    h1 {
+      font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+      font-weight: 600;
+      font-size: clamp(30px, 5vw, 40px);
+      line-height: 1.15;
+      color: var(--wave-deep);
+      margin: 0 0 10px;
+      text-wrap: balance;
+    }
+    @media (prefers-color-scheme: dark) { h1, h2, h3 { color: var(--foam); } }
+    h2 {
+      font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+      font-weight: 600;
+      font-size: clamp(21px, 3.4vw, 27px);
+      color: var(--wave-deep);
+      margin: 46px 0 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      text-wrap: balance;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 30px 0 8px;
+    }
+    p { margin: 0 0 15px; }
+    a { color: var(--wave); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--wave-deep); }
+    strong { color: var(--ink); }
+    @media (prefers-color-scheme: dark) { strong { color: #fff; } }
+    ul, ol { padding-left: 24px; margin: 0 0 16px; }
+    li { margin: 0 0 8px; }
+    hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 34px 0;
+    }
+    /* Intro/meta block: the bolded publisher + dates right under H1 */
+    .sheet > p:first-of-type { color: var(--muted); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 22px;
+      font-size: 15px;
+      display: block;
+      overflow-x: auto;
+    }
+    thead th {
+      background: var(--wash-2);
+      color: var(--wave-deep);
+      text-align: left;
+      font-weight: 700;
+      font-size: 13.5px;
+      letter-spacing: 0.02em;
+    }
+    @media (prefers-color-scheme: dark) { thead th { color: var(--foam); } }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 9px 12px;
+      vertical-align: top;
+    }
+    tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--wash) 55%, transparent); }
+    /* The arbitration all-caps notice + any emphasized callout paragraph */
+    blockquote {
+      margin: 18px 0;
+      padding: 14px 18px;
+      background: var(--wash);
+      border-left: 4px solid var(--coral);
+      border-radius: 0 10px 10px 0;
+      color: var(--ink);
+    }
+    .updated { color: var(--muted); font-size: 14px; }
+    footer.doc {
+      max-width: var(--maxw);
+      margin: 0 auto 56px;
+      padding: 0 28px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    footer.doc a { color: var(--wave); }
+
+    @media print {
+      :root {
+        --ink: #16324a; --muted: #4a5568; --paper: #ffffff;
+        --wash: #ffffff; --wash-2: #eef4f9; --line: #cdd8e4; --wave-deep: #123f60;
+      }
+      body { background: #fff; font-size: 11.5pt; line-height: 1.5; color: #16324a; }
+      .topbar { background: none !important; color: var(--wave-deep); border-bottom: 2px solid var(--wave-deep); }
+      .topbar .inner { padding: 6px 0 10px; }
+      .wordmark { color: var(--wave-deep); }
+      .wordmark .wave-dot { color: var(--wave); }
+      .topbar .tag { color: var(--muted); }
+      .sheet {
+        max-width: none; margin: 0; border: none; border-radius: 0;
+        padding: 8px 0 0; box-shadow: none;
+      }
+      h1 { color: var(--wave-deep); font-size: 22pt; }
+      h2 { color: var(--wave-deep); font-size: 14pt; break-after: avoid; break-inside: avoid; }
+      h3 { break-after: avoid; }
+      p, li { orphans: 3; widows: 3; }
+      table, blockquote, ul, ol { break-inside: avoid; }
+      thead { display: table-header-group; }
+      a { color: #16324a; text-decoration: none; }
+      footer.doc { display: none; }
+      @page { margin: 16mm 15mm 18mm; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="inner">
+      <a class="wordmark" href="./">KOVE<span class="wave-dot"> 〜</span></a>
+      <span class="tag">Privacy Policy · 3 Bears Studio LLC</span>
+    </div>
+  </header>
+
+  <main class="sheet">
+<h1 id="kove-privacy-policy">KOVE Privacy Policy</h1>
+<p><strong>Publisher / data controller:</strong> 3 Bears Studio LLC ("3
+Bears Studio," "we," "us," or "our")<br />
+<strong>Application:</strong> KOVE for iOS (the "App")<br />
+<strong>Effective date:</strong> July 23, 2026<br />
+<strong>Last updated:</strong> July 23, 2026<br />
+<strong>Privacy contact:</strong> <a
+href="mailto:3bearsstudio@gmail.com"><span>3bearsstudio@gmail.com</span></a></p>
+<hr />
+<h2 id="1-about-this-policy">1. About this policy</h2>
+<p>This Privacy Policy explains how 3 Bears Studio LLC collects, uses,
+discloses, and protects information in connection with the KOVE mobile
+application and describes the choices and rights available to you. It
+applies to the App and to the limited online services that support it
+(together, the "Services"). It does not apply to any third‑party
+product, website, or service that we do not own or control, including
+Apple, Google, and the third‑party services described in Section 8.</p>
+<p>KOVE is a personal focus, app‑blocking, and habit‑tracking
+application. It is built on a deliberate principle: <strong>the
+information you would most want kept private is designed never to reach
+us in the first place.</strong> Where that is true, we say so plainly
+and explain the technical reason, because the strongest privacy
+protection is architectural, not merely promised.</p>
+<p>By downloading, accessing, or using the App, you acknowledge that you
+have read and understood this Privacy Policy. If you do not agree with
+it, please do not use the App. Certain features (the optional social
+features described in Section 5) require your separate, affirmative
+opt‑in before any information described there is collected.</p>
+<p>This policy is written to be read by a person, not only by a lawyer.
+Section 2 is an at‑a‑glance summary; the sections that follow give the
+complete detail that governs.</p>
+<hr />
+<h2 id="2-summary-at-a-glance">2. Summary at a glance</h2>
+<p>This summary is provided for convenience only and is qualified in its
+entirety by the full policy below.</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Short answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Do you store my blocks, habits, focus history, or screen‑time
+data?</td>
+<td><strong>No.</strong> They live in <em>your own</em> private iCloud.
+We have no server‑side copy and no way to read them (Section 4).</td>
+</tr>
+<tr>
+<td>Do you collect my location?</td>
+<td><strong>No.</strong> Location‑based blocking is evaluated entirely
+on your device; coordinates never reach us (Section 4).</td>
+</tr>
+<tr>
+<td>Do you read my Apple Health data?</td>
+<td>Only <strong>on your device</strong>, to power habits and
+challenges. Raw Health samples never leave your device. The one narrow
+exception — a single daily number for a health <em>challenge</em> you
+join — is described in Section 5.</td>
+</tr>
+<tr>
+<td>Do you run analytics?</td>
+<td>Yes — <strong>anonymous</strong> analytics (counts and categories,
+never content). We never link them to your identity (Section 5).</td>
+</tr>
+<tr>
+<td>Do the social features collect data?</td>
+<td>Only if you <strong>choose to sign in</strong> to them. Then we
+collect your account ID, sign‑in email, display name, the activity you
+deliberately share, and (if you join a health challenge) a daily fitness
+total (Section 5).</td>
+</tr>
+<tr>
+<td>Do you sell my data or show me ads?</td>
+<td><strong>Never.</strong> No sale, no "sharing" for cross‑context
+advertising, no ad SDK, no cross‑app tracking (Section 6).</td>
+</tr>
+<tr>
+<td>Can I delete everything?</td>
+<td>Yes — you can delete your social account from inside the App, and
+your on‑device/iCloud data is removed when you delete the App (Sections
+9 and 12).</td>
+</tr>
+<tr>
+<td>Where are analytics processed?</td>
+<td>In the <strong>European Union</strong> (Section 11).</td>
+</tr>
+<tr>
+<td>How do disputes work?</td>
+<td>Through individual arbitration with a class‑action waiver,
+<strong>and you may opt out within 30 days</strong> (Section 19).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-definitions">3. Definitions</h2>
+<p>To keep the rest of this policy precise:</p>
+<ul>
+<li><strong>"Personal information"</strong> (or "personal data") means
+information that identifies, relates to, or could reasonably be linked
+with a particular individual or household. It does not include
+de‑identified, aggregated, or publicly available information.</li>
+<li><strong>"Anonymous"</strong> information, as we use the term, is
+information that is not linked to your name, email, account, or any
+other identifier of you, and that we do not attempt to re‑identify.</li>
+<li><strong>"Process"</strong> means any operation performed on
+information, such as collecting, storing, using, disclosing, or deleting
+it.</li>
+<li><strong>"Service provider," "processor,"</strong> and
+<strong>"sub‑processor"</strong> mean a company that processes
+information on our behalf under contract and may not use it for its own
+purposes.</li>
+<li><strong>"CloudKit"</strong> is Apple's iCloud database service, in
+which each user's private data is stored under that user's own Apple
+ID.</li>
+<li><strong>"You"</strong> means the individual using the App.</li>
+</ul>
+<hr />
+<h2 id="4-information-that-stays-on-your-device--we-never-receive-it">4.
+Information that stays on your device — we never receive it</h2>
+<p>The core of KOVE runs entirely on your device and syncs, when you
+choose, through <strong>your own private iCloud account</strong> (Apple
+CloudKit) under your Apple ID. We do <strong>not</strong> collect,
+receive, store, transmit to ourselves, or have any ability to read the
+following:</p>
+<ul>
+<li>Your <strong>blocks</strong> — which apps and categories you block,
+your schedules, unlock methods, and settings.</li>
+<li>Your <strong>habits</strong> and their complete history.</li>
+<li>Your <strong>focus and mindfulness sessions</strong>, streaks, and
+statistics.</li>
+<li>Your <strong>saved places</strong> used for location‑based
+blocking.</li>
+<li>Your <strong>Screen Time / device‑usage data</strong> shown in the
+App's Insights view.</li>
+</ul>
+<p>This is not merely a promise; it is how the App is built. This data
+is written only to your device and to your private iCloud, which is
+controlled by your Apple ID and governed by <a
+href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.
+Under the definition used by Apple and by U.S. privacy statutes,
+information that is never transmitted off your device in a way that lets
+us or our partners access it is not "collected," which is why none of it
+appears in our collection disclosures below.</p>
+<p><strong>Screen Time specifically.</strong> Apple's Screen Time
+framework is designed so that usage data can only be displayed inside a
+sandboxed, on‑device report. The App itself cannot read the raw numbers,
+and none of that data is transmitted to us. Any categorization of apps
+you set for the Insights view is stored on your device and, where
+applicable, in your private iCloud.</p>
+<p><strong>Location specifically.</strong> If you use location‑based
+blocking, your device evaluates the geofence <strong>locally</strong>
+using Apple's Core Location framework. Your location and your saved
+places are not sent to us; they remain on your device and in your
+private iCloud. <strong>KOVE collects no location data of any
+kind.</strong> We do not maintain location‑history logs, and our
+analytics provider's IP‑based geolocation feature has been disabled
+(Section 5).</p>
+<p><strong>Apple Health specifically.</strong> If you connect Apple
+Health, KOVE reads metrics such as step count, active minutes, distance,
+or sleep <strong>on your device</strong> to power habit tracking and, if
+you choose, health challenges. These raw readings are processed locally
+and are not transmitted to us. The single, narrow exception — one
+aggregated daily number submitted only when you join a health
+<em>challenge</em> in the optional social features — is described in
+Section 5.3.</p>
+<p>To remove this device/iCloud data, delete the App, or remove KOVE's
+data in <strong>iOS Settings → [your name] → iCloud → Manage Account
+Storage</strong>. Because it is your data in your iCloud, its deletion
+is within your control and independent of us.</p>
+<hr />
+<h2 id="5-information-we-collect">5. Information we collect</h2>
+<p>We collect only the categories of information described in this
+section. We have organized them by the technical system that receives
+them.</p>
+<h3 id="51-anonymous-product-analytics-posthog">5.1 Anonymous product
+analytics (PostHog)</h3>
+<p>To understand how KOVE is used in aggregate and to improve it, we
+collect <strong>anonymous product analytics</strong> using
+<strong>PostHog</strong>, processed in the <strong>European
+Union</strong>.</p>
+<ul>
+<li><strong>The analytics are anonymous.</strong> We do not attach your
+name, email address, or account to them, and we never call any function
+that would associate analytics events with your identity. Each
+installation is represented by a random identifier that contains no
+personal information. We do not attempt to re‑identify you from
+analytics.</li>
+<li><strong>Events record counts, durations grouped into ranges, and
+fixed category labels</strong> — for example, that "a focus session
+ended," "a block was created," or "a permission was granted." The events
+are engineered so that they <strong>cannot carry the content</strong> of
+what you block, the names or details of your habits, anything you type,
+or your raw screen‑time numbers. This restriction is enforced in the
+App's source code by the type of data an analytics event is allowed to
+carry, not merely by policy.</li>
+<li><strong>Basic technical context</strong> that the analytics software
+records with each event may include your device model, operating‑system
+version, App version, timezone/locale, and a coarse timestamp. Your IP
+address is transmitted to the analytics provider as an unavoidable part
+of any internet request; we have configured the provider
+<strong>not</strong> to derive your geographic location from it, and the
+provider is instructed to discard it after processing.</li>
+<li><strong>We do not use session recording, screen recording, keystroke
+logging, heatmaps, or "autocapture."</strong> Only the specific, named
+events described above are collected.</li>
+</ul>
+<p>On the Apple App Store privacy label these correspond to
+<strong>Product Interaction</strong> and <strong>Other Usage
+Data</strong>, declared <strong>not linked to you</strong> and
+<strong>not used to track you</strong>.</p>
+<h3 id="52-diagnostic-data">5.2 Diagnostic data</h3>
+<p>To find and fix problems, we collect limited <strong>diagnostic
+data</strong> through the same anonymous analytics system. When an error
+occurs, we may record a technical error <strong>domain and numeric
+code</strong> — never the error's human‑readable message, which can
+contain incidental content. Diagnostic data is anonymous and corresponds
+to <strong>Other Diagnostic Data</strong> on the App Store privacy
+label, <strong>not linked to you</strong> and <strong>not used to track
+you</strong>.</p>
+<h3 id="53-optional-social-features-firebase">5.3 Optional social
+features (Firebase)</h3>
+<p>KOVE includes optional social and accountability features —
+<strong>friends, circles, challenges, activity feed, and accountability
+partners</strong>. <strong>These features are entirely opt‑in.</strong>
+If you never sign in to the social features, <strong>none of the
+information in this Section 5.3 is collected</strong>, and you can use
+the entire core of KOVE — focus, blocking, and habits — without an
+account.</p>
+<p>If you choose to sign in (using <strong>Sign in with Apple</strong>
+or <strong>Google Sign‑In</strong>), we use <strong>Google
+Firebase</strong> (Firebase Authentication, Cloud Firestore, Cloud
+Functions, and Firebase Cloud Messaging) to operate these features, and
+we collect:</p>
+<ul>
+<li><strong>Account identifier.</strong> An anonymous user ID (assigned
+by Firebase) that keys your friend connections, challenges, and
+circles.</li>
+<li><strong>Sign‑in email address.</strong> Held by the sign‑in provider
+as part of your credential. With <strong>Sign in with Apple</strong>,
+this is typically an Apple <strong>private‑relay</strong> address rather
+than your real email, and the App itself does not display or store it.
+We use it only as part of authentication.</li>
+<li><strong>Display name.</strong> The name you choose to show to
+friends and circle members. It is length‑limited and sanitized.</li>
+<li><strong>Content you deliberately share with people you connect
+to.</strong> Your participation and results in shared challenges and
+circles, and system‑generated activity events (for example, "completed a
+focus session," or — for accountability partners you specifically opt
+into — "took a break from a block" or "a streak ended"). These activity
+events are generated from controlled, predefined labels; they do
+<strong>not</strong> carry free text that you type.</li>
+<li><strong>Fitness totals — only if you join a health
+challenge.</strong> To place you on a challenge leaderboard, the App
+reads a metric on your device (such as your daily step count, active
+minutes, or hours slept) and submits a <strong>single aggregated daily
+total</strong> for that challenge. Raw Apple Health samples never leave
+your device. If you join no health challenge, no fitness data is
+submitted.</li>
+<li><strong>Notification token.</strong> If you enable notifications, we
+store a device push token so we can deliver accountability and challenge
+notifications to you.</li>
+</ul>
+<p>This information is used <strong>only to operate the social features
+you chose to use.</strong> On the App Store privacy label these appear
+as <strong>linked to you</strong> (they are tied to your account) but
+<strong>not used to track you</strong>. The corresponding Apple data
+categories are <strong>Email Address, Name, User ID,</strong> and
+<strong>Fitness</strong>.</p>
+<h3
+id="54-information-collected-automatically-by-supporting-services">5.4
+Information collected automatically by supporting services</h3>
+<p>When your device communicates with the supporting services above,
+standard technical information — such as your IP address and the timing
+of requests — is transmitted as an inherent part of any internet
+connection and is processed by our service providers (Apple,
+Google/Firebase, and PostHog) to route traffic, secure the Services, and
+prevent abuse. As described in Section 5.1, we have configured our
+analytics provider not to use IP for geolocation. We do not use this
+technical information to build advertising profiles or to track you
+across other companies' apps or websites.</p>
+<h3 id="55-information-we-do-not-collect">5.5 Information we do
+<strong>not</strong> collect</h3>
+<p>For clarity, KOVE does <strong>not</strong> collect: your precise or
+approximate <strong>location</strong>; your <strong>contacts</strong>;
+your <strong>photos</strong> or camera roll; your
+<strong>microphone</strong> or <strong>audio</strong>; your
+<strong>health records</strong> beyond the single challenge total
+described in 5.3; the <strong>content</strong> of your habits, blocks,
+notes, or focus sessions; your <strong>browsing history</strong>; or any
+information used for <strong>advertising</strong> or <strong>cross‑app
+tracking</strong>.</p>
+<hr />
+<h2 id="6-what-we-do-not-do">6. What we do not do</h2>
+<ul>
+<li>We do <strong>not sell</strong> your personal information, and we
+have not sold personal information in the preceding twelve months.</li>
+<li>We do <strong>not "share"</strong> your personal information for
+cross‑context behavioral advertising, as that term is defined under
+California law.</li>
+<li>We do <strong>not</strong> use your data for third‑party
+<strong>advertising</strong>. There is no advertising SDK and no
+attribution/measurement SDK in the App.</li>
+<li>We do <strong>not track you</strong> across other companies' apps or
+websites. Our App Store privacy manifest declares no tracking and no
+tracking domains.</li>
+<li>We do <strong>not</strong> disclose your personal information to
+<strong>data brokers</strong>.</li>
+<li>We do <strong>not</strong> engage in <strong>automated
+decision‑making or profiling</strong> that produces legal or similarly
+significant effects about you.</li>
+</ul>
+<hr />
+<h2 id="7-how-we-use-information">7. How we use information</h2>
+<p>We use the limited information we collect for the following purposes
+only:</p>
+<ul>
+<li><strong>To provide the Services</strong> — to operate the optional
+social features you opt into (authenticating you; maintaining your
+friend graph, circles, and challenges; delivering activity events and
+notifications you enabled).</li>
+<li><strong>To maintain, secure, and improve the Services</strong> — to
+understand aggregate usage through anonymous analytics, to diagnose and
+fix errors, and to protect against fraud, abuse, and security
+incidents.</li>
+<li><strong>To communicate with you</strong> about the Services,
+including responding to your support and privacy requests.</li>
+<li><strong>To comply with law</strong> and to enforce our terms,
+protect our rights, and protect the safety of our users and the
+public.</li>
+</ul>
+<p>We do not use your information for any purpose that is incompatible
+with the purpose for which you provided it, and we do not use anonymous
+analytics or diagnostic data to identify you.</p>
+<hr />
+<h2 id="8-how-we-share-and-disclose-information">8. How we share and
+disclose information</h2>
+<p>We share information only in the limited circumstances below. We do
+not sell it and do not disclose it for others' advertising.</p>
+<h3 id="81-service-providers-subprocessors">8.1 Service providers
+(sub‑processors)</h3>
+<p>We rely on a small number of vetted service providers to operate the
+Services. They may process information only on our behalf and under
+contract, and may not use it for their own purposes:</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Role in KOVE</th>
+<th>What it processes</th>
+<th>Their policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Apple Inc.</strong></td>
+<td>Sign in with Apple; iCloud/CloudKit (your private data, which we
+cannot read); Screen Time; push delivery; App Store distribution</td>
+<td>Authentication credential; your private on‑device/iCloud data
+(controller: you, under your Apple ID); push tokens</td>
+<td><a
+href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></td>
+</tr>
+<tr>
+<td><strong>Google LLC (Firebase / Google Cloud)</strong></td>
+<td>Authentication, database (Firestore), server functions, and
+messaging for the <strong>optional</strong> social layer</td>
+<td>Account ID, sign‑in email, display name, shared activity,
+health‑challenge totals, push token</td>
+<td><a
+href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>;
+<a
+href="https://policies.google.com/privacy">policies.google.com/privacy</a></td>
+</tr>
+<tr>
+<td><strong>PostHog, Inc. (EU Cloud)</strong></td>
+<td>Anonymous product analytics and diagnostics, processed in the
+EU</td>
+<td>Anonymous events (counts, categories); technical context; IP (not
+used for geolocation, then discarded)</td>
+<td><a href="https://posthog.com/privacy">posthog.com/privacy</a></td>
+</tr>
+</tbody>
+</table>
+<p>We do not authorize these providers to use your information for their
+own advertising.</p>
+<h3 id="82-legal-safety-and-protection">8.2 Legal, safety, and
+protection</h3>
+<p>We may disclose information if we believe in good faith that doing so
+is necessary to (a) comply with applicable law, regulation, legal
+process, or a lawful government request; (b) enforce our terms or
+investigate potential violations; (c) detect, prevent, or address fraud,
+security, or technical issues; or (d) protect the rights, property, or
+safety of 3 Bears Studio, our users, or the public.</p>
+<h3 id="83-business-transfers">8.3 Business transfers</h3>
+<p>If 3 Bears Studio is involved in a merger, acquisition, financing,
+reorganization, bankruptcy, or sale of assets, information may be
+transferred as part of that transaction. We will require the recipient
+to honor this Privacy Policy, and we will provide notice (for example,
+in the App or by other reasonable means) before your personal
+information becomes subject to a materially different policy.</p>
+<h3 id="84-with-your-direction">8.4 With your direction</h3>
+<p>When you use the social features, information you deliberately share
+(for example, joining a challenge or connecting with a friend) is
+disclosed to the specific people you choose to share it with, as an
+inherent part of the feature you activated.</p>
+<hr />
+<h2 id="9-data-retention">9. Data retention</h2>
+<p>We keep information only as long as needed for the purposes described
+in this policy, unless a longer period is required or permitted by
+law.</p>
+<ul>
+<li><strong>On‑device and iCloud data (Section 4)</strong> is retained
+for as long as you keep the App or the data in your iCloud, and is
+removed when you delete the App or remove KOVE's data from iCloud. This
+is within your control.</li>
+<li><strong>Optional social‑account data (Section 5.3)</strong> is
+retained while your account exists. When you delete your account
+(Section 12), it is removed from our systems as described there. Backups
+and logs that may transiently contain such data are cycled out of our
+providers' systems in the ordinary course.</li>
+<li><strong>Anonymous analytics and diagnostic data (Sections
+5.1–5.2)</strong> cannot be tied back to you and are retained in
+aggregate for product‑analysis purposes.</li>
+</ul>
+<hr />
+<h2 id="10-data-security">10. Data security</h2>
+<p>We take reasonable and appropriate administrative, technical, and
+organizational measures designed to protect information, including:
+encryption of data in transit (HTTPS/TLS); reliance on Apple's and
+Google's platform security for data at rest; server‑side security rules
+that restrict each user to their own data and route all social writes
+through validated server functions; least‑privilege access controls; and
+minimizing what we collect in the first place, which is the most
+effective protection of all.</p>
+<p>No method of transmission or storage is completely secure, and we
+cannot guarantee absolute security. You are responsible for keeping your
+device and your Apple/Google account credentials secure. If we become
+aware of a security incident affecting your personal information, we
+will notify you and the appropriate authorities as required by
+applicable law.</p>
+<hr />
+<h2 id="11-international-data-transfers">11. International data
+transfers</h2>
+<p>3 Bears Studio LLC is based in the United States. Our anonymous
+analytics are processed in the <strong>European Union</strong> (PostHog
+EU Cloud); our optional social features are operated on <strong>Google
+Firebase / Google Cloud</strong> infrastructure, which is primarily
+located in the <strong>United States</strong>. If you access the
+Services from outside these regions, your information may be transferred
+to, stored in, and processed in countries whose data‑protection laws may
+differ from those of your country.</p>
+<p>Where such transfers are subject to data‑protection law (for example,
+transfers from the EEA or the UK), they are made under appropriate
+safeguards, such as the European Commission's <strong>Standard
+Contractual Clauses</strong> or another lawful transfer mechanism
+offered by the relevant provider. At launch, KOVE is offered in the
+United States (Section 13); we will implement the additional measures
+required by other regions before making the App available there.</p>
+<hr />
+<h2 id="12-deleting-your-account-and-data">12. Deleting your account and
+data</h2>
+<p>You have direct control over deletion:</p>
+<ul>
+<li><strong>Core (device/iCloud) data:</strong> delete the App, or
+remove KOVE's data in iOS Settings as described in Section 4. Because we
+never receive this data, its deletion is entirely in your hands.</li>
+<li><strong>Optional social account:</strong> you can <strong>delete
+your account from inside the App at any time</strong> — go to the
+<strong>Social tab → profile menu → Delete account</strong>. This
+permanently and irreversibly removes your profile, friend connections,
+challenge and circle participation, activity events (including copies
+delivered to the people you shared them with), and notification tokens
+from our systems, and it revokes the App's access to your Apple ID
+sign‑in. It does not affect the private data in your own iCloud, which
+we never had.</li>
+</ul>
+<p>If you are unable to use the in‑App deletion for any reason, contact
+us at <a
+href="mailto:3bearsstudio@gmail.com"><span>3bearsstudio@gmail.com</span></a>
+and we will honor a verified request.</p>
+<hr />
+<h2 id="13-region-of-availability">13. Region of availability</h2>
+<p>At launch, KOVE is offered in the <strong>United States</strong>. If
+we make the App available in the European Union, the United Kingdom, or
+other regions with additional requirements (such as opt‑in consent for
+analytics), we will update this policy and the in‑App experience —
+including any required consent controls — before doing so.</p>
+<hr />
+<h2 id="14-your-privacy-choices-and-rights">14. Your privacy choices and
+rights</h2>
+<p>Everyone can exercise the following choices, regardless of where they
+live:</p>
+<ul>
+<li><strong>Use KOVE without an account.</strong> The entire core of the
+App — focus, blocking, and habits — works without creating any account
+or providing any personal information to us.</li>
+<li><strong>Opt out of analytics.</strong> You may disable analytics
+from within the App. We also honor a remote analytics kill‑switch.</li>
+<li><strong>Control notifications</strong> through the App and through
+iOS Settings.</li>
+<li><strong>Delete your social account</strong> at any time from within
+the App (Section 12).</li>
+</ul>
+<p>Depending on where you live, you may also have the specific legal
+rights described below. Because our analytics are anonymous and your
+core data lives in your own iCloud, most requests are fully satisfied by
+the in‑App controls above; for anything else, contact us at <a
+href="mailto:3bearsstudio@gmail.com"><span>3bearsstudio@gmail.com</span></a>.
+We will not discriminate or retaliate against you for exercising any
+privacy right.</p>
+<h3 id="141-california-residents-ccpacpra">14.1 California residents
+(CCPA/CPRA)</h3>
+<p>If you are a California resident, the California Consumer Privacy
+Act, as amended by the California Privacy Rights Act, provides you the
+rights described here.</p>
+<p><strong>Categories of personal information.</strong> In the past 12
+months, we have collected the following statutory categories, as
+detailed in Section 5:</p>
+<ul>
+<li><strong>Identifiers</strong> (a Firebase account ID; a sign‑in email
+address) — collected only if you use the optional social features.</li>
+<li><strong>Personal information under Cal. Civ. Code § 1798.80</strong>
+(a display name) — social features only.</li>
+<li><strong>Internet or other electronic network activity
+information</strong> (anonymous product‑interaction and diagnostic
+events).</li>
+<li><strong>Health/fitness‑related information</strong> (a single
+aggregated daily total, and only if you join a health challenge) —
+social features only.</li>
+</ul>
+<p>We collect these from <strong>you</strong> and from your
+<strong>device/authentication providers</strong>, for the business
+purposes in Section 7. We <strong>disclose</strong> them only to the
+service providers in Section 8.1 and as described in Sections
+8.2–8.4.</p>
+<p><strong>We do not "sell" and do not "share."</strong> We have not
+sold personal information and have not shared it for cross‑context
+behavioral advertising in the preceding 12 months. We do not sell or
+share the personal information of any individual, including minors under
+16.</p>
+<p><strong>Your California rights.</strong> You have the right to: (a)
+<strong>know/access</strong> the personal information we have collected
+about you and details about our processing; (b) <strong>delete</strong>
+personal information we hold about you; (c) <strong>correct</strong>
+inaccurate personal information; (d) <strong>opt out</strong> of any
+sale or sharing (not applicable, as we do none); and (e)
+<strong>limit</strong> the use of sensitive personal information (we do
+not use sensitive personal information for any purpose requiring a limit
+right). You also have the right to be free from discrimination for
+exercising these rights.</p>
+<p><strong>How to exercise.</strong> Use the in‑App controls (Sections
+12 and 14) or email us at <a
+href="mailto:3bearsstudio@gmail.com"><span>3bearsstudio@gmail.com</span></a>.
+We will verify your request by reference to information associated with
+your account or device. You may use an <strong>authorized agent</strong>
+to submit a request on your behalf with proof of authorization. If we
+deny a request, you may appeal by replying to our decision.</p>
+<p><strong>Sensitive personal information.</strong> We do not collect
+Social Security numbers, government IDs, financial account details,
+precise geolocation, contents of communications, or similar sensitive
+categories. The only arguably sensitive data — a health/fitness total —
+is collected only when you affirmatively join a health challenge and is
+used solely to run that challenge.</p>
+<h3 id="142-residents-of-other-us-states">14.2 Residents of other U.S.
+states</h3>
+<p>If you reside in a U.S. state with a comprehensive consumer‑privacy
+law (including, for example, Virginia, Colorado, Connecticut, Utah,
+Texas, Oregon, Montana, and others as they take effect), you may have
+rights to: <strong>confirm</strong> whether we process your personal
+data and <strong>access</strong> it; <strong>correct</strong>
+inaccuracies; <strong>delete</strong> it; obtain a <strong>portable
+copy</strong>; and <strong>opt out</strong> of targeted advertising,
+sale, or certain profiling. Because we do not conduct targeted
+advertising, sales, or such profiling, those opt‑out rights are
+satisfied by default. To exercise a right, contact us at <a
+href="mailto:3bearsstudio@gmail.com"><span>3bearsstudio@gmail.com</span></a>.
+If we decline a request, you may <strong>appeal</strong> by replying to
+our response; if an appeal is denied, you may contact your state
+Attorney General.</p>
+<h3 id="143-nevada-residents">14.3 Nevada residents</h3>
+<p>Nevada law allows residents to opt out of the sale of certain
+"covered information." We do not sell covered information as defined by
+Nevada law. You may still submit a request to <a
+href="mailto:3bearsstudio@gmail.com"><span>3bearsstudio@gmail.com</span></a>.</p>
+<h3 id="144-eea-uk-and-swiss-residents-gdpr--uk-gdpr">14.4 EEA, UK, and
+Swiss residents (GDPR / UK GDPR)</h3>
+<p>KOVE is offered in the United States at launch (Section 13). To the
+extent the EU General Data Protection Regulation or the UK GDPR applies
+to you, 3 Bears Studio LLC is the <strong>controller</strong> of the
+limited personal data described in Section 5, and:</p>
+<ul>
+<li><strong>Legal bases.</strong> We process optional social‑feature
+data to <strong>perform a contract</strong> with you (providing features
+you request) and based on your <strong>consent</strong> where required;
+we process anonymous analytics and diagnostics under our
+<strong>legitimate interests</strong> in understanding and improving the
+App in a privacy‑protective, non‑identifying way, and — where local law
+requires consent for analytics — only with your consent.</li>
+<li><strong>Your rights.</strong> You may request <strong>access,
+rectification, erasure, restriction, portability,</strong> and
+<strong>objection</strong> to processing, and may <strong>withdraw
+consent</strong> at any time without affecting prior processing.</li>
+<li><strong>International transfers</strong> are addressed in Section
+11.</li>
+<li><strong>Complaints.</strong> You have the right to lodge a complaint
+with your local supervisory authority. We would appreciate the chance to
+address your concern first at <a
+href="mailto:3bearsstudio@gmail.com"><span>3bearsstudio@gmail.com</span></a>.</li>
+</ul>
+<hr />
+<h2 id="15-childrens-privacy">15. Children's privacy</h2>
+<p>KOVE is intended for a general audience and is <strong>not directed
+to children under 13</strong>, and we do not knowingly collect personal
+information from children under 13. The social features are intended for
+users 13 and older. If you believe a child under 13 has provided
+personal information through the App, contact us at <a
+href="mailto:3bearsstudio@gmail.com"><span>3bearsstudio@gmail.com</span></a>
+and we will promptly delete it. We do not knowingly sell or share the
+personal information of any minor.</p>
+<hr />
+<h2 id="16-do-not-track-and-global-privacy-control">16. "Do Not Track"
+and Global Privacy Control</h2>
+<p>Because KOVE does not track you across other companies' apps or
+websites and does not conduct targeted advertising, it does not behave
+differently in response to a browser "Do Not Track" signal. We treat a
+recognized opt‑out‑preference signal (such as Global Privacy Control),
+where it applies, consistently with our practice of not selling or
+sharing personal information.</p>
+<hr />
+<h2 id="17-thirdparty-platforms">17. Third‑party platforms</h2>
+<p>The App relies on Apple and Google platform services, and the
+optional social features authenticate through Sign in with Apple or
+Google. Your use of those services is also governed by their own terms
+and privacy policies (linked in Section 8.1). We are not responsible for
+the privacy practices of third parties, and this policy does not modify
+your relationship with Apple or Google.</p>
+<hr />
+<h2 id="18-changes-to-this-policy">18. Changes to this policy</h2>
+<p>We may update this Privacy Policy from time to time. When we do, we
+will revise the "Last updated" date above and, for material changes,
+provide additional notice in the App or by other reasonable means before
+the change takes effect. Your continued use of the App after an update
+becomes effective constitutes acceptance of the revised policy. We
+encourage you to review this policy periodically.</p>
+<hr />
+<h2 id="19-governing-law-and-dispute-resolution">19. Governing law and
+dispute resolution</h2>
+<p><strong>PLEASE READ THIS SECTION CAREFULLY. IT AFFECTS YOUR LEGAL
+RIGHTS, INCLUDING YOUR RIGHT TO FILE A LAWSUIT IN COURT AND TO HAVE A
+JURY TRIAL, AND REQUIRES INDIVIDUAL ARBITRATION OF MOST DISPUTES,
+SUBJECT TO YOUR RIGHT TO OPT OUT WITHIN 30 DAYS AS DESCRIBED
+BELOW.</strong></p>
+<h3 id="191-governing-law">19.1 Governing law</h3>
+<p>This Privacy Policy and any dispute arising out of or relating to it
+or to the App are governed by the laws of the <strong>State of
+Florida</strong> and applicable U.S. federal law, without regard to
+conflict‑of‑laws principles. The Federal Arbitration Act governs the
+interpretation and enforcement of the arbitration provisions in this
+Section 19.</p>
+<h3 id="192-informal-resolution-first">19.2 Informal resolution
+first</h3>
+<p>Before starting an arbitration or other proceeding, you agree to
+first try to resolve the dispute informally by sending a written
+description of it, and your contact information, to <a
+href="mailto:3bearsstudio@gmail.com"><span>3bearsstudio@gmail.com</span></a>.
+We will do the same for any dispute we have with you. Both parties agree
+to negotiate in good faith for at least <strong>60 days</strong> after
+such notice. This informal‑resolution requirement is a precondition to
+beginning arbitration, and any applicable statute of limitations is
+tolled during this period.</p>
+<h3 id="193-binding-individual-arbitration">19.3 Binding individual
+arbitration</h3>
+<p>If the dispute is not resolved within 60 days, you and 3 Bears Studio
+LLC agree that any dispute, claim, or controversy arising out of or
+relating to this Privacy Policy, the App, or the Services — whether
+based in contract, tort, statute, fraud, misrepresentation, or any other
+legal theory — will be resolved <strong>exclusively through final and
+binding arbitration on an individual basis</strong>, rather than in
+court, except as provided in Section 19.6.</p>
+<p>The arbitration will be administered by the <strong>American
+Arbitration Association (AAA)</strong> under its <strong>Consumer
+Arbitration Rules</strong> then in effect, as modified by this policy.
+The arbitration will be conducted in the English language. Unless you
+and we agree otherwise, any in‑person hearing will take place in the
+county of your residence or another mutually agreed location; many
+consumer arbitrations are conducted by telephone, video, or on written
+submissions. The arbitrator's award may be entered as a judgment in any
+court of competent jurisdiction. The arbitrator, and not any court, has
+exclusive authority to resolve disputes about the interpretation,
+applicability, enforceability, or formation of this arbitration
+agreement, except that a court decides whether a claim falls within the
+small‑claims exception (Section 19.6) and whether the class‑action
+waiver (Section 19.5) is enforceable.</p>
+<h3 id="194-arbitration-costs">19.4 Arbitration costs</h3>
+<p>Payment of filing, administration, and arbitrator fees is governed by
+the AAA Consumer Arbitration Rules. If those rules require you to pay a
+filing fee and the arbitration is not frivolous, we will reimburse or
+pay your portion to the extent required by the AAA rules or applicable
+law, and in any event we will not seek to recover our attorneys' fees
+from you unless the arbitrator finds your claim frivolous.</p>
+<h3 id="195-classaction-and-jurytrial-waiver">19.5 Class‑action and
+jury‑trial waiver</h3>
+<p><strong>You and 3 Bears Studio LLC agree that each may bring claims
+against the other only in an individual capacity, and not as a plaintiff
+or class member in any purported class, collective, consolidated, or
+representative proceeding.</strong> The arbitrator may not consolidate
+more than one person's claims and may not preside over any form of class
+or representative proceeding. <strong>You and we waive any right to a
+jury trial.</strong> If a court decides that this class‑action waiver is
+unenforceable as to a particular claim, then that claim (and only that
+claim) will be severed and may proceed in court, while all other claims
+remain in arbitration.</p>
+<h3 id="196-exceptions">19.6 Exceptions</h3>
+<p>Nothing in this Section 19 prevents either party from: (a) bringing
+an individual claim in <strong>small‑claims court</strong> if it
+qualifies and remains in that forum; or (b) seeking <strong>injunctive
+or other equitable relief in a court of competent jurisdiction</strong>
+to prevent the actual or threatened infringement, misappropriation, or
+violation of intellectual‑property or other proprietary rights. In
+addition, nothing here waives any right you may have under applicable
+law that cannot be waived by agreement.</p>
+<h3 id="197-your-right-to-opt-out-of-arbitration">19.7 Your right to opt
+out of arbitration</h3>
+<p><strong>You may opt out of this arbitration agreement (Sections
+19.3–19.5) within 30 days</strong> of first accepting this Privacy
+Policy by emailing <a
+href="mailto:3bearsstudio@gmail.com"><span>3bearsstudio@gmail.com</span></a>
+with the subject line "Arbitration Opt‑Out" and stating your name and
+that you wish to opt out. Opting out will not affect any other part of
+this policy or your use of the App. If you opt out, disputes will be
+resolved in the courts identified in Section 19.8.</p>
+<h3 id="198-forum-for-nonarbitrated-disputes">19.8 Forum for
+non‑arbitrated disputes</h3>
+<p>For any dispute not subject to arbitration (including if you opt out
+or if the arbitration agreement is found not to apply), you and 3 Bears
+Studio LLC agree to the exclusive jurisdiction of the state and federal
+courts located in <strong>Florida</strong>, and each party consents to
+personal jurisdiction and venue there.</p>
+<h3 id="199-severability-and-survival">19.9 Severability and
+survival</h3>
+<p>If any provision of this Section 19 is found unenforceable, the
+remaining provisions will remain in full force and effect, except that
+if the class‑action waiver in Section 19.5 is found unenforceable as to
+a claim seeking public injunctive relief, that claim will proceed in
+court as provided in Section 19.5. This Section 19 survives termination
+of your relationship with us and deletion of the App.</p>
+<hr />
+<h2 id="20-contact-us">20. Contact us</h2>
+<p>If you have any questions, requests, or complaints about this Privacy
+Policy or your information, contact:</p>
+<p><strong>3 Bears Studio LLC</strong> Privacy contact: <a
+href="mailto:3bearsstudio@gmail.com"><span>3bearsstudio@gmail.com</span></a></p>
+<p>We will respond to verifiable requests within the timeframes required
+by applicable law.</p>
+<hr />
+<h2
+id="appendix-a--data-collection-summary-app-store-privacy-label">Appendix
+A — Data collection summary (App Store privacy label)</h2>
+<p>This appendix maps our collection to Apple's App Store privacy‑label
+categories. It is provided for transparency and is consistent with the
+App's privacy manifest.</p>
+<table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Collected?</th>
+<th>Linked to you?</th>
+<th>Used to track you?</th>
+<th>Purpose</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product Interaction</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Analytics</td>
+<td>Always (anonymous)</td>
+</tr>
+<tr>
+<td>Other Usage Data</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Analytics</td>
+<td>Always (anonymous)</td>
+</tr>
+<tr>
+<td>Other Diagnostic Data</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Analytics / app functionality</td>
+<td>Always (anonymous)</td>
+</tr>
+<tr>
+<td>Email Address</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>App functionality</td>
+<td>Only if you use social features</td>
+</tr>
+<tr>
+<td>Name (display name)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>App functionality</td>
+<td>Only if you use social features</td>
+</tr>
+<tr>
+<td>User ID</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>App functionality</td>
+<td>Only if you use social features</td>
+</tr>
+<tr>
+<td>Fitness</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>App functionality</td>
+<td>Only if you join a health challenge</td>
+</tr>
+<tr>
+<td>Precise/Coarse Location</td>
+<td><strong>No</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Never collected</td>
+</tr>
+<tr>
+<td>Contacts, Photos, Browsing History, Financial Info</td>
+<td><strong>No</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Never collected</td>
+</tr>
+</tbody>
+</table>
+<p><em>End of Privacy Policy.</em></p>
+  </main>
+
+  <footer class="doc">
+    <p>© 2026 3 Bears Studio LLC. This document is the authoritative KOVE Privacy Policy.</p>
+  </footer>
+</body>
+</html>
