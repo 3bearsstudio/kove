@@ -388,9 +388,10 @@ Union</strong>.</p>
 <li><strong>The analytics are anonymous.</strong> We do not attach your
 name, email address, or account to them, and we never call any function
 that would associate analytics events with your identity. Each
-installation is represented by a random identifier that contains no
-personal information. We do not attempt to re‑identify you from
-analytics.</li>
+installation is represented by a <strong>stable, anonymous
+identifier</strong> that contains no personal information; it lets us
+count returning users accurately without knowing who you are. We do not
+attempt to re‑identify you from analytics.</li>
 <li><strong>Events record counts, durations grouped into ranges, and
 fixed category labels</strong> — for example, that "a focus session
 ended," "a block was created," or "a permission was granted." The events
@@ -411,9 +412,10 @@ logging, heatmaps, or "autocapture."</strong> Only the specific, named
 events described above are collected.</li>
 </ul>
 <p>On the Apple App Store privacy label these correspond to
-<strong>Product Interaction</strong> and <strong>Other Usage
-Data</strong>, declared <strong>not linked to you</strong> and
-<strong>not used to track you</strong>.</p>
+<strong>Product Interaction</strong>, <strong>Other Usage Data</strong>,
+and the anonymous installation identifier (<strong>Device ID</strong>) —
+all declared <strong>not linked to you</strong> and <strong>not used to
+track you</strong>.</p>
 <h3 id="52-diagnostic-data">5.2 Diagnostic data</h3>
 <p>To find and fix problems, we collect limited <strong>diagnostic
 data</strong> through the same anonymous analytics system. When an error
@@ -999,6 +1001,14 @@ App's privacy manifest.</p>
 <td>No</td>
 <td>No</td>
 <td>Analytics / app functionality</td>
+<td>Always (anonymous)</td>
+</tr>
+<tr>
+<td>Device ID (anonymous analytics identifier)</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Analytics</td>
 <td>Always (anonymous)</td>
 </tr>
 <tr>
