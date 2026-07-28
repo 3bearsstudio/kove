@@ -6,8 +6,8 @@ Pages** under the studio org — **no custom domain**. Mirrors the `anchored-sit
 - **Org / repo:** `github.com/3bearsstudio/kove` (public)
 - **Local working copy:** `~/appDevelopment/kove`
 - **Live URLs:**
-  - Home → https://3bearsstudio.github.io/kove/
-  - **Privacy policy → https://3bearsstudio.github.io/kove/privacy.html**  ← the App Store Connect "Privacy Policy URL"
+  - Home → https://3bears.studio/kove/
+  - **Privacy policy → https://3bears.studio/kove/privacy.html**  ← the App Store Connect "Privacy Policy URL"
 
 ## Pages
 

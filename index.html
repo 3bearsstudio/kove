@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KOVE — Focus, blocking & habits, built private by design</title>
-  <meta name="description" content="KOVE is a focus, app-blocking, and habit app built so the things you'd most want kept private never reach us. Published by 3 Bears Studio LLC." />
+  <title>Kove — the blocker you can't talk yourself out of</title>
+  <meta name="description" content="Kove blocks distracting apps for real, builds habits, and lets an accountability partner see when you slip. Built private by design by 3 Bears Studio LLC. In development for iPhone." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='84'>%F0%9F%8C%8A</text></svg>" />
   <style>
     :root {
       --midnight: #0b1426;
       --wave-deep: #123f60;
       --wave: #2b7bb0;
+      --wave-ink: #1d5c88;
       --foam: #8fd8ea;
       --cream: #eaf6fb;
-      --ink: #1b2330;
-      --muted: #56617a;
+      --ink: #16202e;
+      --muted: #4c5870;
       --paper: #ffffff;
       --wash: #f3f8fc;
       --line: #dce6f0;
+      --coral: #e2674b;
+      --kelp: #2f8f6a;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -28,65 +31,133 @@
       background: var(--wash);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-    a { color: var(--wave); }
+    a { color: var(--wave-ink); }
+    a:focus-visible, .btn:focus-visible {
+      outline: 3px solid var(--foam);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    .wrap { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- hero ---------- */
     .hero {
-      background:
-        radial-gradient(1100px 480px at 50% -12%, var(--wave-deep), var(--midnight));
+      background: radial-gradient(1200px 560px at 50% -18%, var(--wave-deep), var(--midnight));
       color: var(--cream);
-      text-align: center;
-      padding: 92px 24px 84px;
+      padding: 76px 24px 68px;
+    }
+    .hero-inner {
+      max-width: 1040px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px; align-items: center;
     }
     .wordmark {
-      font-weight: 700;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      font-size: 30px;
-      margin: 0 0 26px;
-      color: #fff;
+      font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase;
+      font-size: 22px; margin: 0 0 22px; color: #fff;
     }
     .wordmark .wave-dot { color: var(--foam); }
+    .chip {
+      display: inline-block; font-size: 12px; font-weight: 700;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--midnight); background: var(--foam);
+      padding: 5px 13px; border-radius: 999px; margin-bottom: 20px;
+    }
     .hero h1 {
       font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
-      font-weight: 600;
-      font-size: clamp(30px, 6vw, 48px);
-      line-height: 1.16;
-      margin: 0 auto 18px;
-      max-width: 18ch;
+      font-weight: 600; font-size: clamp(32px, 5.2vw, 50px);
+      line-height: 1.12; margin: 0 0 18px; text-wrap: balance;
     }
     .hero p.lead {
-      font-size: clamp(16px, 2.4vw, 19px);
-      color: rgba(234, 246, 251, 0.82);
-      max-width: 52ch;
-      margin: 0 auto 30px;
+      font-size: clamp(16px, 2.1vw, 19px);
+      color: rgba(234, 246, 251, 0.85);
+      max-width: 46ch; margin: 0 0 28px;
     }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
     .btn {
-      display: inline-block;
-      background: var(--foam);
-      color: #08243a;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 13px 26px;
-      border-radius: 999px;
-      letter-spacing: 0.01em;
+      display: inline-block; background: var(--foam); color: #08243a;
+      font-weight: 700; text-decoration: none;
+      padding: 13px 26px; border-radius: 999px;
     }
     .btn:hover { background: #a9e2f0; }
-    .wrap { width: 100%; max-width: 900px; margin: 0 auto; padding: 0 24px; }
-    section.band { padding: 66px 0; }
+    .btn.ghost {
+      background: transparent; color: var(--cream);
+      border: 1px solid rgba(234, 246, 251, 0.35);
+    }
+    .btn.ghost:hover { border-color: var(--foam); color: var(--foam); }
+
+    /* device frame */
+    .phone {
+      justify-self: center;
+      width: 100%; max-width: 292px;
+      border: 9px solid #0a1220;
+      border-radius: 42px;
+      background: #0a1220;
+      box-shadow: 0 26px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(143,216,234,.16);
+      overflow: hidden;
+      line-height: 0;
+    }
+    .phone img { width: 100%; height: auto; display: block; }
+
+    /* ---------- bands ---------- */
+    section.band { padding: 84px 0; }
+    section.band.tint { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .band-head { max-width: 62ch; margin: 0 auto 48px; text-align: center; }
     h2.section-title {
       font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
-      font-size: clamp(23px, 4vw, 31px);
-      text-align: center;
-      color: var(--wave-deep);
-      margin: 0 0 10px;
+      font-size: clamp(25px, 3.6vw, 34px);
+      color: var(--wave-deep); margin: 0 0 12px; text-wrap: balance;
     }
-    p.section-sub { text-align: center; color: var(--muted); max-width: 56ch; margin: 0 auto 42px; }
+    .band-head p { color: var(--muted); margin: 0; font-size: 17px; }
+
+    .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .pillar {
+      background: var(--paper); border: 1px solid var(--line);
+      border-radius: 18px; padding: 28px 26px;
+    }
+    section.band.tint .pillar { background: var(--wash); }
+    .pillar .mark {
+      width: 42px; height: 42px; border-radius: 12px;
+      background: var(--wave-deep); color: var(--foam);
+      display: grid; place-items: center; font-size: 20px; margin-bottom: 14px;
+    }
+    .pillar h3 {
+      font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+      font-size: 20px; margin: 0 0 8px; color: var(--wave-deep);
+    }
+    .pillar p { margin: 0; color: var(--muted); font-size: 15.5px; }
+
+    /* trigger / friction lists */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+    .listcard h3 {
+      font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+      font-size: 21px; color: var(--wave-deep); margin: 0 0 6px;
+    }
+    .listcard > p.sub { color: var(--muted); margin: 0 0 20px; font-size: 15.5px; }
+    ul.ticks { list-style: none; margin: 0; padding: 0; }
+    ul.ticks li {
+      padding: 11px 0 11px 30px; position: relative;
+      border-top: 1px solid var(--line); font-size: 15.5px;
+    }
+    ul.ticks li:first-child { border-top: 0; }
+    ul.ticks li::before {
+      content: ""; position: absolute; left: 6px; top: 19px;
+      width: 8px; height: 8px; border-radius: 50%; background: var(--wave);
+    }
+    ul.ticks li b { color: var(--ink); }
+    ul.ticks li span { color: var(--muted); }
+
+    .note {
+      margin-top: 34px; padding: 20px 22px; border-radius: 14px;
+      background: var(--wave-deep); color: var(--cream); font-size: 15.5px;
+    }
+    .note b { color: var(--foam); }
+
+    /* privacy */
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 26px 24px;
+      background: var(--paper); border: 1px solid var(--line);
+      border-radius: 16px; padding: 26px 24px;
     }
     .card .mark { font-size: 24px; margin-bottom: 10px; }
     .card h3 {
@@ -94,46 +165,165 @@
       font-size: 19px; margin: 0 0 8px; color: var(--wave-deep);
     }
     .card p { margin: 0; color: var(--muted); font-size: 15px; }
+
     footer {
-      background: var(--midnight);
-      color: rgba(234, 246, 251, 0.72);
-      font-size: 13px;
-      text-align: center;
-      padding: 44px 24px;
+      background: var(--midnight); color: rgba(234, 246, 251, 0.75);
+      font-size: 13px; text-align: center; padding: 46px 24px;
     }
     footer a { color: var(--foam); }
     footer .links { margin-bottom: 12px; }
     footer .links a { margin: 0 10px; }
-    @media (max-width: 720px) { .cards { grid-template-columns: 1fr; } .hero { padding: 68px 20px 60px; } }
+
+    @media (max-width: 860px) {
+      .hero { padding-top: 60px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+      .hero p.lead { margin-left: auto; margin-right: auto; }
+      .hero-cta { justify-content: center; }
+      .pillars, .split, .cards { grid-template-columns: 1fr; }
+      .split { gap: 34px; }
+      section.band { padding: 62px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 <body>
+
   <header class="hero">
-    <p class="wordmark">KOVE<span class="wave-dot"> 〜</span></p>
-    <h1>Focus, blocking &amp; habits — built private by design.</h1>
-    <p class="lead">KOVE helps you protect your attention and build better habits. It's built so the things you'd most want kept private never reach us in the first place.</p>
-    <a class="btn" href="privacy.html">Read our Privacy Policy</a>
+    <div class="hero-inner">
+      <div>
+        <p class="wordmark">KOVE<span class="wave-dot"> 〜</span></p>
+        <span class="chip">In development for iPhone</span>
+        <h1>The blocker you can&rsquo;t talk yourself out of.</h1>
+        <p class="lead">
+          Most app blockers stop working the moment you really want them to. Kove is built for the
+          part everyone skips &mdash; what happens when you try to get around it.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="#what">See what it does</a>
+          <a class="btn ghost" href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="phone">
+        <img src="shots/focus-home.png" width="496" height="1080"
+             alt="Kove's Focus screen on iPhone, showing a focus-time ring, step and activity tiles, and a card offering to take a break from an active block." />
+      </div>
+    </div>
   </header>
+
+  <section class="band" id="what">
+    <div class="wrap">
+      <div class="band-head">
+        <h2 class="section-title">Four things, built to work together</h2>
+        <p>Blocking is the enforcement. Focus sessions are the replacement. Habits are the progress. A partner is the reason you don&rsquo;t quietly give up.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="mark" aria-hidden="true">&#128737;</div>
+          <h3>Blocking that holds</h3>
+          <p>Block individual apps or whole categories through Apple&rsquo;s Screen Time. Blocks keep
+          working while Kove is closed, and they stack &mdash; if two blocks cover an app, both have to
+          clear before it opens.</p>
+        </div>
+        <div class="pillar">
+          <div class="mark" aria-hidden="true">&#9201;</div>
+          <h3>Focus sessions</h3>
+          <p>Six kinds: a focus timer, breathing, meditation, pomodoro, a body scan, and wind-down.
+          Ambient soundscapes, optional voice guidance, and a live countdown on your Lock Screen.</p>
+        </div>
+        <div class="pillar">
+          <div class="mark" aria-hidden="true">&#10003;</div>
+          <h3>Habits that count themselves</h3>
+          <p>Daily and weekly habits with streaks and earned badges. Health-backed habits &mdash;
+          steps, active minutes, distance, sleep &mdash; fill themselves in from Apple Health, so
+          there&rsquo;s nothing to remember to tap.</p>
+        </div>
+        <div class="pillar">
+          <div class="mark" aria-hidden="true">&#128101;</div>
+          <h3>Someone who actually knows</h3>
+          <p>Add an accountability partner and they see the slips, not just the wins: a missed habit,
+          a broken streak, a block you talked your way past. Both people opt in, and either can end it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint">
+    <div class="wrap">
+      <div class="band-head">
+        <h2 class="section-title">How the blocking actually works</h2>
+        <p>You decide when a block switches on, and how hard it is to get out of &mdash; in advance,
+        while you&rsquo;re thinking clearly.</p>
+      </div>
+      <div class="split">
+        <div class="listcard">
+          <h3>When it turns on</h3>
+          <p class="sub">Any of these, and they stack.</p>
+          <ul class="ticks">
+            <li><b>Right now</b> &mdash; <span>a switch you flip yourself</span></li>
+            <li><b>On a schedule</b> &mdash; <span>including overnight, with breaks you carve out</span></li>
+            <li><b>After a daily limit</b> &mdash; <span>&ldquo;30 minutes, then done for the day&rdquo;</span></li>
+            <li><b>At a place</b> &mdash; <span>at the office, or everywhere except home</span></li>
+            <li><b>Until a health goal</b> &mdash; <span>locked until you&rsquo;ve walked 8,000 steps</span></li>
+          </ul>
+        </div>
+        <div class="listcard">
+          <h3>What it takes to get out</h3>
+          <p class="sub">Pick your friction, or pick none at all.</p>
+          <ul class="ticks">
+            <li><b>Breathe</b> &mdash; <span>a paced breathing exercise, longer each time you cave</span></li>
+            <li><b>Wait</b> &mdash; <span>a timer that grows with every unlock that day</span></li>
+            <li><b>Walk</b> &mdash; <span>a set number of real steps before it opens</span></li>
+            <li><b>Type your why</b> &mdash; <span>retype your own reason. Pasting is blocked.</span></li>
+            <li><b>No breaks</b> &mdash; <span>no escape hatch at all until the block ends</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">
+        <b>Locked In</b> goes one step further: while the block is running you can&rsquo;t edit it,
+        switch it off, or delete it. You can still delete the whole app &mdash; no app on iPhone can
+        stop that, and we won&rsquo;t pretend otherwise &mdash; but the easy way out is gone.
+      </p>
+    </div>
+  </section>
 
   <section class="band">
     <div class="wrap">
-      <h2 class="section-title">Private by architecture, not just by promise</h2>
-      <p class="section-sub">Three commitments that shape how the app is built.</p>
+      <div class="band-head">
+        <h2 class="section-title">And you can see where the time went</h2>
+        <p>Kove reads your iPhone&rsquo;s own Screen Time and sorts it into distracting, neutral and
+        productive automatically &mdash; you only correct it where it guesses wrong. Alongside it sits
+        the number most screen-time apps never show you: how long you actually spent focused.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint">
+    <div class="wrap">
+      <div class="band-head">
+        <h2 class="section-title">Private by architecture, not just by promise</h2>
+        <p>Three commitments that shape how the app is built.</p>
+      </div>
       <div class="cards">
         <div class="card">
-          <div class="mark">🔒</div>
+          <div class="mark" aria-hidden="true">&#128274;</div>
           <h3>Your data stays yours</h3>
-          <p>Your blocks, habits, focus history, and screen-time data live in your own private iCloud. We have no copy and no way to read them.</p>
+          <p>Your blocks, habits, focus history, and screen-time data live in your own private iCloud.
+          We have no copy and no way to read them.</p>
         </div>
         <div class="card">
-          <div class="mark">📍</div>
+          <div class="mark" aria-hidden="true">&#128205;</div>
           <h3>No location, no tracking</h3>
-          <p>Location-based blocking is evaluated entirely on your device. We don't track you across other apps or websites, and there are no ads.</p>
+          <p>Location-based blocking is evaluated entirely on your device. We don&rsquo;t track you
+          across other apps or websites, and there are no ads.</p>
         </div>
         <div class="card">
-          <div class="mark">📊</div>
+          <div class="mark" aria-hidden="true">&#128202;</div>
           <h3>Anonymous by default</h3>
-          <p>We measure how the app is used with anonymous analytics — counts and categories, never the content of what you block, track, or type.</p>
+          <p>We measure how the app is used with anonymous analytics &mdash; counts and categories,
+          never the content of what you block, track, or type.</p>
         </div>
       </div>
     </div>
@@ -147,5 +337,6 @@
     <p>Questions about your data? <a href="mailto:hello@3bears.studio">hello@3bears.studio</a></p>
     <p>&copy; 2026 3 Bears Studio LLC &middot; Apopka, Florida, USA</p>
   </footer>
+
 </body>
 </html>
