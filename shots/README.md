@@ -40,6 +40,31 @@ Raw captures live in `/tmp/kove-shots/s-*.png` at capture time (not committed �
 they contain the unredacted surname). Re-capture, then:
 
 ```bash
-python3 RETOUCH.py          # writes /tmp/kove-shots/out
-sips -Z 620 <file> --out shots/<name>.png
+python3 RETOUCH.py          # writes /tmp/kove-shots/out  (1206x2622, retouched)
+python3 ~/appDevelopment/3bears-studio-site/tools/prep-shots.py \
+  /tmp/kove-shots/out shots --widths 1206,620 --quality 92
 ```
+
+That writes `<name>-620.webp` and `<name>-1206.webp`, which is what `index.html`
+references via `srcset`.
+
+### ⚠️ Do not use `sips -Z` here — it is why the shots shipped blurry
+
+The original instruction was `sips -Z 620`. **`-Z` constrains the LONGEST side, not
+the width.** On a 1206x2622 portrait capture it scales the *height* to 620 and
+leaves the width at **285** — so every screenshot was 46% of the intended width
+while `index.html` correctly declared `width="620"`. The browser upscaled 2.2x
+before device pixel ratio was even applied; on a DPR-3 phone that is a ~6.5x
+upscale, and it looked exactly as bad as that sounds.
+
+If you ever go back to `sips`, the flag you want is `--resampleWidth 620`:
+
+```bash
+sips -Z 620              # 1206x2622 -> 285x620   WRONG
+sips --resampleWidth 620 # 1206x2622 -> 620x1348  right
+```
+
+**Sizing target.** The hero `.phone` caps at 292px and carousel slides are 262px,
+so the largest an image is ever displayed is ~274 CSS px. At DPR 3 that wants
+~822px of real pixels — which is why 1206 (the iPhone 17 Pro's native capture
+width, and the most that exists) is the top rung of the `srcset`.
