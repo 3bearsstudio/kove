@@ -86,6 +86,43 @@
     }
     .btn.ghost:hover { border-color: var(--foam); color: var(--foam); }
 
+    /* ── waitlist ──
+       Posts to api.3bears.studio (our own Worker — not a third party). The
+       contract and the reasoning live in the 3bears-api repo README. */
+    .wait-form {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      justify-content: center; margin: 0 auto; max-width: 520px;
+    }
+    .wait-form input[type="email"] {
+      flex: 1 1 260px; min-width: 0;
+      font: inherit; font-size: 16px;      /* 16px or iOS zooms the page on focus */
+      padding: 13px 16px; border-radius: 999px;
+      border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+    }
+    .wait-form input[type="email"]:focus-visible {
+      outline: 3px solid var(--foam); outline-offset: 2px; border-color: var(--wave);
+    }
+    .wait-form button {
+      font: inherit; font-weight: 700; cursor: pointer;
+      padding: 13px 26px; border-radius: 999px; border: 0;
+      background: var(--wave); color: #fff;
+    }
+    .wait-form button:hover { background: var(--wave-ink); }
+    .wait-form button:disabled { opacity: .55; cursor: default; }
+    /* The honeypot. Hidden from people, left in the DOM for bots to fill in.
+       Not display:none — some bots skip those. Never remove the aria-hidden or
+       the tabindex, or a screen-reader user could land in it and be dropped. */
+    .wait-hp {
+      position: absolute; left: -9999px; width: 1px; height: 1px;
+      overflow: hidden; opacity: 0;
+    }
+    .wait-note { font-size: 14px; color: var(--muted); margin: 16px 0 0; }
+    .wait-msg {
+      margin: 18px 0 0; font-size: 16px; font-weight: 600; min-height: 1.4em;
+    }
+    .wait-msg.ok { color: var(--kelp); }
+    .wait-msg.bad { color: var(--coral); }
+
     /* device frame */
     .phone {
       justify-self: center;
@@ -248,7 +285,8 @@
           part everyone skips &mdash; what happens when you try to get around it.
         </p>
         <div class="hero-cta">
-          <a class="btn" href="#what">See what it does</a>
+          <a class="btn" href="#waitlist">Join the waitlist</a>
+          <a class="btn ghost" href="#what">See what it does</a>
           <a class="btn ghost" href="privacy.html">Privacy Policy</a>
         </div>
       </div>
@@ -463,6 +501,44 @@
     </div>
   </section>
 
+  <section class="band" id="waitlist" aria-labelledby="waitlist-h">
+    <div class="wrap">
+      <div class="band-head">
+        <h2 class="section-title" id="waitlist-h">Be there when it opens</h2>
+        <p>Kove isn&rsquo;t on the App Store yet. Leave your email and we&rsquo;ll tell you when
+        testing opens &mdash; that&rsquo;s the only thing we&rsquo;ll ever use it for.</p>
+      </div>
+
+      <form class="wait-form" id="wait-form" novalidate>
+        <label class="wait-hp" aria-hidden="true">
+          Leave this field empty
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </label>
+
+        <input type="email" id="wait-email" name="email" required
+               autocomplete="email" inputmode="email" spellcheck="false"
+               placeholder="you@example.com" aria-label="Email address"
+               aria-describedby="wait-note">
+        <button type="submit" id="wait-submit">Join the waitlist</button>
+      </form>
+
+      <p class="wait-msg" id="wait-msg" role="status" aria-live="polite"></p>
+
+      <p class="wait-note" id="wait-note" style="text-align:center">
+        One email, when it&rsquo;s ready. No newsletter, never shared, and you can ask us to delete
+        it any time &mdash; see the <a href="privacy.html#waitlist">Privacy&nbsp;Policy</a>.
+      </p>
+
+      <noscript>
+        <p class="wait-note" style="text-align:center">
+          The form needs JavaScript. Email
+          <a href="mailto:kove@3bears.studio?subject=Kove%20waitlist">kove@3bears.studio</a>
+          and we&rsquo;ll add you.
+        </p>
+      </noscript>
+    </div>
+  </section>
+
   <footer>
     <div class="links">
       <a href="privacy.html">Privacy Policy</a>
@@ -539,6 +615,77 @@
     }, { passive: true });
     window.addEventListener('resize', sync);
     sync();
+  })();
+
+  /* ── waitlist ──────────────────────────────────────────────────────────────
+     Posts to our own Cloudflare Worker at api.3bears.studio. That is a host we
+     control, so this does not break the "no third-party requests" rule.
+
+     The `website` field is a HONEYPOT: hidden from people, submitted as-is. The
+     Worker answers 200 and stores nothing when it is filled, so a bot cannot
+     tell it failed. Do not "clean up" by removing it from the payload.
+
+     With JS off, the <noscript> block offers kove@3bears.studio instead — which
+     is why this form has no `action`: a plain POST would navigate the visitor
+     to a page of raw JSON.
+  */
+  (function () {
+    var form = document.getElementById('wait-form');
+    if (!form) return;
+    var email  = document.getElementById('wait-email');
+    var button = document.getElementById('wait-submit');
+    var msg    = document.getElementById('wait-msg');
+    var hp     = form.querySelector('input[name="website"]');
+    var ENDPOINT = 'https://api.3bears.studio/waitlist';
+
+    function say(text, kind) {
+      msg.textContent = text;
+      msg.className = 'wait-msg' + (kind ? ' ' + kind : '');
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var value = (email.value || '').trim();
+
+      // Cheap client-side check only. The Worker validates properly; this is
+      // just to avoid a pointless round trip.
+      if (!value || value.indexOf('@') < 1 || value.indexOf('.') < 0) {
+        say('That email doesn’t look right — mind checking it?', 'bad');
+        email.focus();
+        return;
+      }
+
+      button.disabled = true;
+      say('Adding you…');
+
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: value,
+          app: 'kove',
+          website: hp ? hp.value : ''
+        })
+      }).then(function (res) {
+        if (res.ok) {
+          form.hidden = true;
+          say('You’re on the list. We’ll email you when testing opens.', 'ok');
+          return;
+        }
+        button.disabled = false;
+        if (res.status === 429) {
+          say('That’s a few tries in a row — give it an hour and try again.', 'bad');
+        } else if (res.status === 400) {
+          say('That email doesn’t look right — mind checking it?', 'bad');
+          email.focus();
+        } else {
+          say('Something went wrong on our end. Email kove@3bears.studio and we’ll add you.', 'bad');
+        }
+      }).catch(function () {
+        button.disabled = false;
+        say('Couldn’t reach us — check your connection, or email kove@3bears.studio.', 'bad');
+      });
+    });
   })();
   </script>
 
